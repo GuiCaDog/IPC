@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane id="main_container" fx:id="borderMain" stylesheets="@crono/cronometreCss1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crossfitauxiliar.FXMLDocumentController">
+   <center>
+      <HBox id="main_containerVB" fx:id="mainContainerHB" alignment="CENTER" maxWidth="1600.0" stylesheets="@crono/cronometreCss1.css">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox fx:id="vBoxButtons" alignment="CENTER" onMouseEntered="#mouseNearBy">
+                     <children>
+                        <VBox id="buttonVB" fx:id="pOutVB" alignment="CENTER" stylesheets="@crono/playEnable.css">
+                           <children>
+                              <StackPane fx:id="stackPanePlay">
+                                 <children>
+                                    <ImageView id="playPausa" fx:id="pauseAndPlayImage" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#pauseOPlay" onMouseEntered="#mouseEnteredButton" onMouseExited="#mouseExitedButton" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/play48dp.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox id="dBP" mouseTransparent="true" opacity="0.7" />
+                                 </children>
+                              </StackPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox id="buttonDissVB" fx:id="fOutVB" alignment="CENTER" maxWidth="60.0" stylesheets="@crono/buttonsDissable.css">
+                           <children>
+                              <StackPane fx:id="stackForward">
+                                 <children>
+                                    <ImageView fx:id="canviarInterval" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#canviarInterval" onMouseEntered="#mouseEnteredButton" onMouseExited="#mouseExitedButton" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/fastForward48dp.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox id="dissableButtonVB" fx:id="vBForward" mouseTransparent="true" opacity="0.7" />
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                        <VBox id="buttonDissVB" fx:id="rOutVB" alignment="CENTER" maxWidth="60.0" stylesheets="@crono/buttonsDissable.css">
+                           <children>
+                              <StackPane fx:id="stackForward">
+                                 <children>
+                                    <ImageView fx:id="reestartView" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#stop" onMouseEntered="#mouseEnteredButton" onMouseExited="#mouseExitedButton" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/loopBack.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox id="dissableButtonVB" fx:id="vBoxRset" mouseTransparent="true" opacity="0.7" />
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox id="main_containerVB" fx:id="mainContainerVB" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="800.0" stylesheets="@crono/cronometreCss1.css">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefWidth="550.0">
+                                 <children>
+                                    <StackPane>
+                                       <children>
+                                          <Circle fx:id="circleOut" fill="#81d4fa" layoutX="385.0" layoutY="210.0" radius="315.0" stroke="#ffffff00" strokeType="INSIDE" />
+                                          <Circle fx:id="cercleIn" fill="#03a9f4" radius="300.0" stroke="#ffffff00" strokeType="INSIDE" />
+                                          <Canvas fx:id="timeCanvas" height="600.0" width="600.0" />
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Text fx:id="cronometroNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00">
+                                                   <font>
+                                                      <Font name="Arial" size="96.0" />
+                                                   </font>
+                                                </Text>
+                                                <VBox alignment="CENTER_RIGHT" maxWidth="220.0">
+                                                   <children>
+                                                      <Text fx:id="decimas" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </StackPane>
+                                    <VBox id="vBoxBarretes" alignment="CENTER">
+                                       <children>
+                                          <Label id="labelInfo" fx:id="textoInfo">
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <VBox maxWidth="0.0" minWidth="0.0" prefWidth="0.0" spacing="10.0" visible="false">
+                                                   <children>
+                                                      <Label fx:id="circuito" text="Circuito" textFill="#392d2d">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="ejercicio" text="Ejercicio" textFill="#392d2d">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <VBox alignment="CENTER" spacing="10.0">
+                                                   <children>
+                                                      <HBox fx:id="hBoxCircuit" alignment="CENTER" />
+                                                      <HBox fx:id="hBoxExercicis" alignment="BOTTOM_CENTER">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </VBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="50.0" top="100.0" />
+                                       </VBox.margin>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </VBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" right="160.0" top="50.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </center>
+   <left>
+      <VBox id="backButton" maxHeight="60.0" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <ImageView fx:id="arrereImageView" accessibleRole="BUTTON" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#arrere" onMouseEntered="#mouseEnteredButton" onMouseExited="#mouseExitedButton" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/back48dp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

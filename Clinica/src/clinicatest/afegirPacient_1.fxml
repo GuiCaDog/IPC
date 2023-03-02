@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox id="container" maxHeight="-Infinity" maxWidth="400.0" minHeight="-Infinity" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B3E5FC;" stylesheets="@../css/afegirPacient.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinicatest.AfegirPacientController">
+   <children>
+      <HBox alignment="CENTER" style="-fx-background-color: #0288D1;">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Paciente" wrappingWidth="80.71875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <HBox id="hBoxXe" prefHeight="250.0">
+         <children>
+            <VBox id="image_container">
+               <children>
+                  <Button maxHeight="190.0" maxWidth="185.0" minHeight="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#obtindreFoto" onMouseEntered="#ratoliSobreText" onMouseExited="#ratoliNoSobreText" style="-fx-background-color: #B3E5FC;">
+                     <graphic>
+                        <ImageView fx:id="foto" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/default.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets right="40.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="143.0" prefWidth="371.0">
+               <children>
+                  <HBox id="infoBox" alignment="CENTER_LEFT" prefHeight="100.0" stylesheets="@../css/afegirPacient.css">
+                     <children>
+                        <VBox alignment="CENTER" maxHeight="30.0" prefHeight="30.0" style="-fx-background-color: #03a9f4;">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI/NIE/..." wrappingWidth="100.0">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <TextField fx:id="pin">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children></HBox>
+                  <HBox id="infoBox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" maxHeight="30.0" prefHeight="30.0" style="-fx-background-color: #03a9f4;">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre: " wrappingWidth="100.0">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <TextField fx:id="nom">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children></HBox>
+                  <HBox id="infoBox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" maxHeight="30.0" prefHeight="30.0" style="-fx-background-color: #03a9f4;">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: blue;" text="Apellidos:" wrappingWidth="100.0">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <TextField fx:id="cognom">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children></HBox>
+                  <HBox id="infoBox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" maxHeight="30.0" prefHeight="30.0" style="-fx-background-color: #03a9f4;">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono:" wrappingWidth="100.0">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <TextField fx:id="telf" prefHeight="30.0" promptText="123456789">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children></HBox>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="68.0" prefWidth="570.0">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefWidth="580.0">
+               <children>
+                  <Label fx:id="telfError" text="*Solo pueden escribirse números en el campo &quot;Teléfono&quot;" textFill="#f44336" visible="false">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="textoObligatorio" fill="#f44336" strokeType="OUTSIDE" strokeWidth="0.0" text="*Rellene los campos obligatorios" textAlignment="RIGHT" visible="false">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="400.0" spacing="10.0">
+         <children>
+            <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#aceptarPaciente" style="-fx-background-color: #0288D1; -fx-text-fill: #ffffff;" stylesheets="@../css/afegirPacient.css" text="Aceptar" />
+            <Button id="Buttons" alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelar" stylesheets="@../css/afegirPacient.css" text="Cancelar" />
+         </children>
+         <VBox.margin>
+            <Insets top="49.0" />
+         </VBox.margin>
+         <stylesheets>
+            <URL value="@../css/afegirPacient.css" />
+            <URL value="@../css/afegirPacient.css" />
+         </stylesheets>
+      </HBox>
+   </children>
+</VBox>

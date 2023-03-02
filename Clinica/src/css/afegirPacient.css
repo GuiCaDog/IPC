@@ -1,0 +1,23 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19-abr-2019, 17:20:22
+    Author     : guicado
+*/
+
+#container {
+	-fx-padding: 10;
+}
+
+#hBoxXe{
+	-fx-border-width: 3;
+                -fx-border-color: #ffffff;
+                -fx-border-radius: 20;
+}
+#Buttons {
+    -fx-background-color:#0288D1;
+    -fx-text-fill:#ffffff;
+}

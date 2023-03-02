@@ -1,0 +1,6 @@
+#container {
+	-fx-padding: 10;
+}
+#image_container{
+	-fx-border-style: solid
+}

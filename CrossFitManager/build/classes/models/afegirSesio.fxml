@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox id="mainVB" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="448.0" stylesheets="@crearSesio/crearSesioCss.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crossfitauxiliar.AfegirSesioController">
+   <children>
+      <GridPane prefWidth="311.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="247.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.0" minWidth="10.0" prefWidth="171.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="30.0" />
+         </VBox.margin>
+         <children>
+            <TextField fx:id="codigoSesion" prefHeight="25.0" prefWidth="121.0" GridPane.columnIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="5" />
+            <ChoiceBox fx:id="numEjercicios" prefHeight="20.0" prefWidth="23.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="numRepeticiones" prefHeight="25.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <TextField fx:id="sCal" prefHeight="25.0" prefWidth="50.0" />
+                  <Label text="(segundos)" textFill="#dddbdb">
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <TextField fx:id="sEjer" prefHeight="25.0" prefWidth="50.0" />
+                  <Label text="(segundos)" textFill="#dddbdb">
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="1" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <TextField fx:id="sDesEjer" prefHeight="25.0" prefWidth="50.0" />
+                  <Label text="(segundos)" textFill="#dddbdb">
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <TextField fx:id="sDesCirc" prefHeight="25.0" prefWidth="50.0" />
+                  <Label text="(segundos)" textFill="#dddbdb">
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Label styleClass="labelNormal" text="CÓDIGO" />
+            <Label styleClass="labelNormal" text="NÚMERO DE EJERCICIOS" GridPane.rowIndex="1" />
+            <Label styleClass="labelNormal" text="REPETICIONES DEL CIRCUITO" GridPane.rowIndex="2" />
+            <Label styleClass="labelNormal" text="CALENTAMIENTO" GridPane.rowIndex="3" />
+            <Label styleClass="labelNormal" text="DURACIÓN DE EJERCICIO" GridPane.rowIndex="4" />
+            <Label styleClass="labelNormal" text="DESCANSO ENTRE EJERCICIO" GridPane.rowIndex="5" />
+            <Label styleClass="labelNormal" text="DESCANSO ENTRE CIRCUITO" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <VBox>
+         <children>
+            <HBox alignment="TOP_RIGHT">
+               <children>
+                  <Label id="#textoError" fx:id="mensajeError" text="*Es necesario rellenar todos los campos" textFill="WHITE" visible="false">
+                     <HBox.margin>
+                        <Insets right="17.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="42.0" prefWidth="448.0">
+               <children>
+                  <Button id="aceptar" mnemonicParsing="false" onAction="#aceptar" text="Aceptar">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="cancelar" mnemonicParsing="false" onAction="#cancelar" text="Cancelar">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-jun-2019, 15:35:56
+    Author     : guicado
+*/
+
+#buttonDissVB:hover {
+    -fx-background-color:  #f5f5f5 ; 
+}
+#buttonDissVB{
+    
+    -fx-border-color: #ffffff;
+    -fx-border-width: 0.7 ;
+    -fx-background-color: none;
+}

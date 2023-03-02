@@ -1,0 +1,25 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14-abr-2019, 15:22:40
+    Author     : guicado
+*/
+
+.list-view .scroll-bar:vertical .increment-arrow,
+.list-view .scroll-bar:vertical .decrement-arrow,
+.list-view .scroll-bar:vertical .increment-button,
+.list-view .scroll-bar:vertical .decrement-button {
+    -fx-padding: 0px;
+}
+.list-view .scroll-bar:vertical {
+    -fx-scale-x: 0;
+}
+.listCellText{    
+    -fx-font-size: 8;
+    -fx-text-fill: #888;
+    -fx-font-family: "Museo Sans 500";   
+    
+}

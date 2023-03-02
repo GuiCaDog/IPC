@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1500.0" style="-fx-background-color: #03A9F4;" stylesheets="@../css/provaImage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinicatest.FXMLDocumentController">
+   <children>
+      <BorderPane fx:id="borderPane">
+         <top>
+            <StackPane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="1189.0" style="-fx-background-color: #0288D1;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <StackPane.margin>
+                        <Insets left="5.0" />
+                     </StackPane.margin>
+                     <children>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/clinicIc.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label text="Clínica de atención primaria. Servicios Médicos Avanzados." textFill="#eeeeee">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children></StackPane>
+         </top>
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" side="LEFT" style="-fx-background-color: transparent; -fx-border-radius: 0;" stylesheets="@../css/prova.css" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab id="calendar" fx:id="tabCal" closable="false" onSelectionChanged="#abrirCalendar" style="-fx-text-base-color: #ffffff;">
+                           <content>
+                              <GridPane style="-fx-background-radius: 40; -fx-background-color: #B3E5FC;">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                              </GridPane>
+                           </content>
+                        </Tab>
+                        <Tab id="patients" fx:id="tabPacientes" closable="false" onSelectionChanged="#abrirListaPacientes" style="-fx-text-base-color: #ffffff;" />
+                        <Tab id="doctors" fx:id="tabDoctors" closable="false" onSelectionChanged="#abrirListaDoctores" style="-fx-text-base-color: #ffffff;" />
+                        <Tab id="citas" fx:id="tabCitas" closable="false" onSelectionChanged="#abrirListaCitas" style="-fx-text-base-color: #ffffff;" />
+                    </tabs>
+                  </TabPane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

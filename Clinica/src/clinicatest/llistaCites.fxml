@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinicatest.LlistaCitesController">
+   <children>
+      <BorderPane id="bPane" stylesheets="@../css/fxmlDeLlistes.css" HBox.hgrow="ALWAYS">
+         <center>
+            <VBox id="vBox" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #ffffff; -fx-border-style: solid;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="TOP_CENTER" style="-fx-background-color: #0288D1;;">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Citas" textAlignment="CENTER" wrappingWidth="577.5283203125">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <VBox VBox.vgrow="NEVER">
+                     <children>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #64b5f6;">
+                           <items>
+                              <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/ic_search_black_48_nano.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="buscarCita" minWidth="700.0" prefHeight="25.0" prefWidth="700.0" promptText="Introducir cualquier dato de la cita deseada" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="735.0" />
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="40.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#afegirCita">
+                                       <graphic>
+                                          <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/add_46.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="removeC" disable="true" mnemonicParsing="false" onAction="#eliminarCita">
+                                       <graphic>
+                                          <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/rmove_46_roig.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </items>
+                        </ToolBar>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #03A9F4; -fx-border-color: #03A9F4; -fx-border-width: 0;" VBox.vgrow="NEVER">
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="50.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 2; -fx-border-radius: 10;">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Paciente:">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <TextField fx:id="buscarPacient" maxWidth="1.7976931348623157E308" minWidth="-Infinity" onMouseClicked="#textFieldRequest" prefHeight="26.0" prefWidth="400.0" promptText="Buscar paciente">
+                                             <VBox.margin>
+                                                <Insets right="10.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <ChoiceBox fx:id="listaPacientes" maxHeight="0.0" minHeight="0.0" opacity="0.0" prefHeight="0.0" prefWidth="300.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 2; -fx-border-radius: 10;">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor:">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <VBox alignment="CENTER" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <TextField fx:id="buscarDoctor" onMouseClicked="#textFieldRequestDocs" prefHeight="26.0" prefWidth="400.0" promptText="Buscar doctor">
+                                             <VBox.margin>
+                                                <Insets right="10.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <ChoiceBox fx:id="listaDoctores" maxHeight="0.0" minHeight="0.0" opacity="0.0" prefHeight="0.0" prefWidth="300.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ListView fx:id="listaCitas" fixedCellSize="100.0" style="-fx-background-color: #B3E5FC;" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+   <padding>
+      <Insets left="50.0" />
+   </padding>
+</HBox>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinicatest.CalendariController">
+   <children>
+      <BorderPane id="bPane" minWidth="1225.0" stylesheets="@../css/fxmlDeLlistes.css" HBox.hgrow="ALWAYS">
+         <center>
+            <VBox fx:id="pane" style="-fx-background-color: #0288D1;;" BorderPane.alignment="TOP_CENTER">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <DatePicker fx:id="date_picker" onMouseClicked="#obrirLlistaCites" visible="false" />
+                        <Label text="Calendario de citas médicas" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="200.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+   <padding>
+      <Insets left="50.0" />
+   </padding>
+</HBox>

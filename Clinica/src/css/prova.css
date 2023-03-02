@@ -1,0 +1,83 @@
+.tab-pane *.tab-header-area *.tab-header-background {
+    -fx-background-color:#03A9F4;
+    
+}
+
+.tab-pane {
+    
+    -fx-tab-min-width:150px;
+    -fx-tab-max-width:200px;
+    -fx-tab-min-height:160px;
+    -fx-tab-max-height:200px;
+    -fx-border-color: #03A9F4;
+    -fx-border-width: 20;
+    /*-fx-background-image:url("./images/default.png"); */
+}
+
+.tab {
+    
+    -fx-rotate: 90;
+    -fx-font-family: Arial;
+    -fx-font-size: 18;
+    -fx-font-position: left;
+    -fx-background-color: #0288D1; /*#03A9F4;*/
+    -fx-text-base-color: #ffffff;
+    -fx-border-color: #0288D1;
+    -fx-border-width: 0;
+    /*-fx-border-radius: 40;*/
+    -fx-background-radius: 20 20 20 20; 
+    
+    /*-fx-background-image:url("./images/default.png"); */
+}
+
+#calendar { 
+    -fx-background-image:url("../images/calendari_160.png");
+    -fx-background-position: top; /* Center the image */
+    -fx-background-repeat: no-repeat; /* Do not repeat the image */ 
+    -fx-background-size: 164px 164px;
+
+}
+
+
+#patients { 
+    -fx-background-image:url("../images/listaPacient_160.png");
+    -fx-background-position: left; /* Center the image */
+    -fx-background-repeat: no-repeat; /* Do not repeat the image */ 
+    -fx-background-size: 164px 164px ; 
+
+}
+
+#doctors { 
+    -fx-background-image:url("../images/listaDoctor_160.png");
+    -fx-background-position: left; /* Center the image */
+    -fx-background-repeat: no-repeat; /* Do not repeat the image */ 
+    -fx-background-size: 164px 164px ; 
+
+}
+
+#citas { 
+    -fx-background-image:url("../images/listaCites_160.png");
+    -fx-background-position: left; /* Center the image */
+    -fx-background-repeat: no-repeat; /* Do not repeat the image */ 
+    -fx-background-size: 164px 164px ; 
+    
+
+}
+#fakeTab { 
+    -fx-background-color: transparent;
+
+}
+
+
+
+.tab:hover {
+    -fx-background-color:  #B3E5FC ; 
+}
+
+.tab:selected {
+    -fx-background-color:  #B3E5FC ; 
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}

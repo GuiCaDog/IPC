@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox id="mainVB" alignment="TOP_CENTER" prefHeight="800.0" prefWidth="1200.0" stylesheets="@configSesio/configSesio1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crossfitauxiliar.ConfiguracioSesioController">
+   <children>
+      <VBox alignment="CENTER">
+         <children>
+            <VBox>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#arrere">
+                     <graphic>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/back48dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <HBox id="hBoxGrup" alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label text="GRUPO" />
+                        <StackPane alignment="CENTER_LEFT">
+                           <children>
+                              <TextField id="grupo" fx:id="textFieldGrup" maxWidth="1100.0" onMousePressed="#mouseEntraEnGrup" prefWidth="1100.0" promptText="🔍">
+                                 <StackPane.margin>
+                                    <Insets left="100.0" right="100.0" />
+                                 </StackPane.margin>
+                              </TextField>
+                              <Label fx:id="labelGrup" />
+                           </children>
+                        </StackPane>
+                        <ComboBox fx:id="choiceBoxGrup" maxHeight="0.0" minHeight="0.0" minWidth="900.0" opacity="0.0" prefHeight="0.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ComboBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="25.0" top="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="25.0" />
+               </VBox.margin>
+            </HBox>
+            <ListView fx:id="listViewGrup" prefHeight="0.0" prefWidth="100.0" visible="false" />
+         </children>
+      </VBox>
+      <HBox>
+         <children>
+            <VBox id="vBoxLlista" alignment="CENTER" prefHeight="400.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label text="SESIÓN" />
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <TextField fx:id="textFieldSesio" promptText="🔍" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" />
+                           </HBox.margin></TextField>
+                     </children>
+                  </HBox>
+                  <ListView id="listView" fx:id="listViewSesio" onScrollFinished="#actualitzarItems">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></ListView>
+                  <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Button id="plusSesion" mnemonicParsing="false" onAction="#crearSesion">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="40.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/plus48dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="20.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox fx:id="vBoxDatosSesion" alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="codiSesio" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00e5ff" height="3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0">
+                           <VBox.margin>
+                              <Insets bottom="40.0" />
+                           </VBox.margin>
+                        </Rectangle>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <HBox prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <Rectangle arcWidth="5.0" height="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="5.0" />
+                              <StackPane id="sPInfo" alignment="CENTER_LEFT" prefWidth="300.0">
+                                 <children>
+                                    <VBox id="vBINFO" prefHeight="200.0" prefWidth="100.0" />
+                                    <Label fx:id="dato" text="NÚMERO DE EJERCICIOS" />
+                                 </children>
+                              </StackPane>
+                              <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <StackPane alignment="CENTER_LEFT">
+                                       <children>
+                                          <TextField id="fonsDatosV" fx:id="textFieldDato" editable="false" />
+                                          <Label fx:id="mostrarDato" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Rectangle arcWidth="5.0" fill="#00e5ff" height="3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="700.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <HBox prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <Rectangle arcWidth="5.0" height="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="5.0" />
+                              <StackPane id="sPInfo" alignment="CENTER_LEFT" prefWidth="300.0">
+                                 <children>
+                                    <VBox id="vBINFO" prefHeight="200.0" prefWidth="100.0" />
+                                    <Label fx:id="dato1" text="REPETICIONES DEL CIRCUITO" />
+                                 </children>
+                              </StackPane>
+                              <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <StackPane alignment="CENTER_LEFT">
+                                       <children>
+                                          <TextField id="fonsDatosV" fx:id="textFieldDato1" editable="false" />
+                                          <Label fx:id="mostrarDato1" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Rectangle arcWidth="5.0" fill="#00e5ff" height="3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="700.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="45.0">
+                     <children>
+                        <HBox prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <Rectangle arcWidth="5.0" height="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="5.0" />
+                              <StackPane id="sPInfo" alignment="CENTER_LEFT" prefWidth="300.0">
+                                 <children>
+                                    <VBox id="vBINFO" prefHeight="200.0" prefWidth="100.0" />
+                                    <Label fx:id="dato11" text="CALENTAMIENTO" />
+                                 </children>
+                              </StackPane>
+                              <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <StackPane alignment="CENTER_LEFT">
+                                       <children>
+                                          <TextField id="fonsDatosV" fx:id="textFieldDato11" editable="false" />
+                                          <Label fx:id="mostrarDato11" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Rectangle arcWidth="5.0" fill="#00e5ff" height="3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="700.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="80.0">
+                     <children>
+                        <HBox prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <Rectangle arcWidth="5.0" height="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="5.0" />
+                              <StackPane id="sPInfo" alignment="CENTER_LEFT" prefWidth="300.0">
+                                 <children>
+                                    <VBox id="vBINFO" prefHeight="200.0" prefWidth="100.0" />
+                                    <Label fx:id="dato111" text="DURACIÓN DE EJERCICIO" />
+                                 </children>
+                              </StackPane>
+                              <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <StackPane alignment="CENTER_LEFT">
+                                       <children>
+                                          <TextField id="fonsDatosV" fx:id="textFieldDato111" editable="false" />
+                                          <Label fx:id="mostrarDato111" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Rectangle arcWidth="5.0" fill="#00e5ff" height="3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="700.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="115.0">
+                     <children>
+                        <HBox prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <Rectangle arcWidth="5.0" height="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="5.0" />
+                              <StackPane id="sPInfo" alignment="CENTER_LEFT" prefWidth="300.0">
+                                 <children>
+                                    <VBox id="vBINFO" prefHeight="200.0" prefWidth="100.0" />
+                                    <Label fx:id="dato1111" text="DESCANSO ENTRE EJERCICIO" />
+                                 </children>
+                              </StackPane>
+                              <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <StackPane alignment="CENTER_LEFT">
+                                       <children>
+                                          <TextField id="fonsDatosV" fx:id="textFieldDato1111" editable="false" />
+                                          <Label fx:id="mostrarDato1111" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Rectangle arcWidth="5.0" fill="#00e5ff" height="3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="700.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="150.0">
+                     <children>
+                        <HBox prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <Rectangle arcWidth="5.0" height="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="5.0" />
+                              <StackPane id="sPInfo" alignment="CENTER_LEFT" prefWidth="300.0">
+                                 <children>
+                                    <VBox id="vBINFO" prefHeight="200.0" prefWidth="100.0" />
+                                    <Label fx:id="dato11111" text="DESCANSO ENTRE CIRCUITO" />
+                                 </children>
+                              </StackPane>
+                              <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <StackPane alignment="CENTER_LEFT">
+                                       <children>
+                                          <TextField id="fonsDatosV" fx:id="textFieldDato11111" editable="false" />
+                                          <Label fx:id="mostrarDato11111" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Rectangle arcWidth="5.0" fill="#00e5ff" height="3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="700.0" />
+                     </children>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="150.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="25.0" />
+         </VBox.margin>
+      </HBox>
+      <Button id="playBut" fx:id="startSesionButton" disable="true" mnemonicParsing="false" onAction="#startSesion">
+         <VBox.margin>
+            <Insets bottom="15.0" left="30.0" top="75.0" />
+         </VBox.margin>
+         <graphic>
+            <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/play48dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</VBox>

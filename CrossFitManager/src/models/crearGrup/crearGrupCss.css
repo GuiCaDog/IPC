@@ -1,0 +1,33 @@
+#mainVB {
+     -fx-background-color: #0288D1;
+    
+}
+.text{
+    -fx-font-size: 15px;
+}
+
+.labelNormal {
+    -fx-text-fill:#e0f7fa;
+}
+
+
+#aceptar{
+    -fx-border-color:#00e5ff;
+    
+}
+
+#cancelar{
+    
+    -fx-border-color:#00e5ff;
+}
+.button {
+    -fx-opacity: 1;
+    -fx-background-color:#0288D1;
+    -fx-text-fill: #ffffff;
+    
+    
+}
+.button:hover {
+    -fx-background-color:  #B3E5FC ; 
+    
+}

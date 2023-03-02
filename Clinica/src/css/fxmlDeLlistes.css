@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-abr-2019, 17:23:11
+    Author     : guicado
+*/
+#vBox {
+   -fx-border-color:  #0288D1;
+   -fx-border-width: 20;
+   -fx-background-color: #0288D1;
+   
+    
+}
+
+#bPaneRight {
+    -fx-border-color: #0288D1;
+    -fx-border-width: 20;
+
+}
+
+#bPane{
+       -fx-border-width: 10;
+   -fx-border-radius:10;
+   -fx-border-color:#0288D1;
+   -fx-background-color: #03A9F4;
+}
+

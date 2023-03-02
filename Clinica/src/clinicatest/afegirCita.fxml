@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane style="-fx-background-color: #0288D1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinicatest.AfegirCitaController">
+   <top>
+      <HBox alignment="CENTER" style="-fx-background-color: #0288D1;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Cita" textAlignment="CENTER" wrappingWidth="897.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1050.0" style="-fx-background-color: #B3E5FC;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" style="-fx-background-color: #03A9F4;">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="50.0" maxWidth="520.0" prefHeight="50.0" style="-fx-background-color: #03A9F4; -fx-border-color: #ffffff; -fx-border-width: 2; -fx-border-radius: 10;">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Paciente:">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <VBox alignment="CENTER_LEFT">
+                           <children>
+                              <TextField fx:id="buscarPacient" maxWidth="400.0" onMouseClicked="#pacienteRequest" prefHeight="26.0" prefWidth="300.0" promptText="Buscar paciente" />
+                              <ChoiceBox fx:id="listaPacientes" maxHeight="1.0" minHeight="1.0" opacity="0.0" prefHeight="1.0" prefWidth="414.0" />
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="50.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" maxHeight="50.0" maxWidth="520.0" prefHeight="50.0" style="-fx-background-color: #03A9F4; -fx-border-color: #ffffff; -fx-border-width: 2; -fx-border-radius: 10;">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor:">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <VBox alignment="CENTER_LEFT">
+                           <children>
+                              <TextField fx:id="buscarDoctor" maxWidth="400.0" onMouseClicked="#doctorRequest" prefHeight="26.0" prefWidth="300.0" promptText="Buscar doctor">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TextField>
+                              <ChoiceBox fx:id="listaDoctores" maxHeight="1.0" minHeight="1.0" opacity="0.0" prefHeight="1.0" prefWidth="512.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="532.0" visible="false">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de inicio de las consultas:">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <ChoiceBox fx:id="horaIni" prefHeight="25.0" prefWidth="43.0">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Text>
+                  <ChoiceBox fx:id="minIni" prefHeight="25.0" prefWidth="43.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="2.0">
+               <VBox.margin>
+                  <Insets left="60.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="anteriorButon" disable="true" mnemonicParsing="false" onAction="#anterior" style="-fx-background-color: #0288D1;" text="ANTERIOR" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="siguienteB" disable="true" mnemonicParsing="false" onAction="#siguiente" style="-fx-background-color: #0288D1;" text="SIGUIENTE" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hoy" disable="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#hoy" style="-fx-background-color: #0288D1;" text="HOY" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <StackPane prefHeight="900.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <GridPane fx:id="semana" prefHeight="500.0" style="-fx-border-color: #03A9F4; -fx-border-width: 10; -fx-border-radius: 30; -fx-background-color: #B3E5FC;">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                    </rowConstraints>
+                     <children>
+                        <VBox opacity="0.15" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: blue;" GridPane.columnSpan="8" />
+                        <ListView fx:id="hora" editable="true" fixedCellSize="20.0" focusTraversable="false" layoutX="522.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #03A9F4; -fx-border-width: 5; -fx-border-radius: 0; -fx-background-color: #B3E5FC;" stylesheets="@../css/llistesSemana.css" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <ListView fx:id="dilluns" editable="true" fixedCellSize="20.0" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #03A9F4; -fx-border-width: 5; -fx-border-radius: 0; -fx-background-color: #B3E5FC;" stylesheets="@../css/llistesSemana.css" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <ListView fx:id="dimarts" editable="true" fixedCellSize="20.0" focusTraversable="false" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #03A9F4; -fx-border-width: 5; -fx-border-radius: 0; -fx-background-color: #B3E5FC;" stylesheets="@../css/llistesSemana.css" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <ListView fx:id="dimecres" editable="true" fixedCellSize="20.0" focusTraversable="false" layoutX="95.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #03A9F4; -fx-border-width: 5; -fx-border-radius: 0; -fx-background-color: #B3E5FC;" stylesheets="@../css/llistesSemana.css" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <ListView fx:id="dijous" editable="true" fixedCellSize="20.0" focusTraversable="false" layoutX="180.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #03A9F4; -fx-border-width: 5; -fx-border-radius: 0; -fx-background-color: #B3E5FC;" stylesheets="@../css/llistesSemana.css" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <ListView fx:id="divendres" editable="true" fixedCellSize="20.0" focusTraversable="false" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #03A9F4; -fx-border-width: 5; -fx-border-radius: 0; -fx-background-color: #B3E5FC;" stylesheets="@../css/llistesSemana.css" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <ListView fx:id="dissabte" editable="true" fixedCellSize="20.0" focusTraversable="false" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #03A9F4; -fx-border-width: 5; -fx-border-radius: 0; -fx-background-color: #B3E5FC;" stylesheets="@../css/llistesSemana.css" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <ListView fx:id="diumenge" editable="true" fixedCellSize="20.0" focusTraversable="false" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #03A9F4; -fx-border-width: 5; -fx-border-radius: 0; -fx-background-color: #B3E5FC;" stylesheets="@../css/llistesSemana.css" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <Text fill="WHITE" layoutX="123.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fill="WHITE" layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fill="WHITE" layoutX="10.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fill="WHITE" layoutX="10.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="4">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fill="WHITE" layoutX="10.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="5">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fill="WHITE" layoutX="10.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="6">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fill="WHITE" layoutX="123.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="7">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="semana1" layoutX="10.0" layoutY="10.0" mouseTransparent="true" prefHeight="500.0" style="-fx-border-color: #03A9F4; -fx-border-width: 10; -fx-border-radius: 30;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="15.0" right="15.0" top="20.0" />
+               </VBox.margin>
+            </StackPane>
+            <HBox alignment="BOTTOM_RIGHT" spacing="4.0">
+               <children>
+                  <Button fx:id="aceptarButon" alignment="CENTER_RIGHT" disable="true" mnemonicParsing="false" onAction="#aceptar" style="-fx-background-color: #0288D1;" text="Aceptar" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #0288D1;" text="Cancelar" textFill="WHITE" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets right="50.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

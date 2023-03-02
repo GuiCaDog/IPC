@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-jun-2019, 16:43:23
+    Author     : guicado
+*/
+
+#mainVB {
+     -fx-background-color: #0288D1;
+    
+}
+
+.label {
+    -fx-font-size: 20px;    
+}
+.text{
+    -fx-font-size: 15px;
+}
+
+.labelNormal {
+    -fx-text-fill:#e0f7fa;
+}
+
+#textoError{
+    -fx-text-fill:red;
+}
+
+.button {
+    -fx-opacity: 1;
+    -fx-background-color:#0288D1;
+    
+    
+}
+.button:hover {
+    -fx-background-color:  #B3E5FC ; 
+    
+}
+.button:disabled {
+    -fx-opacity: 0.5;
+    -fx-background-color:#0288D1;
+    
+    
+}
+
+.axis:left {
+    -fx-tick-label-fill: #ffffff;
+    
+}
+.axis:bottom {
+    -fx-tick-label-fill: #ffffff;
+    
+}
+
+.axis:bottom .axis-label{
+    -fx-text-fill:#ffffff;
+    
+}
+
+.axis:left .axis-label{
+    -fx-text-fill:#ffffff;
+    
+}
+.chart .chart-content .chart-plot-background {
+    -fx-background-color:#81d4fa;
+    -fx-opacity:0.5;
+    
+}
+
+.chart .chart-content .chart-horizontal-grid-lines{
+    -fx-stroke:#263238;
+    -fx-stroke-width:2;
+      
+}
+
+.chart .chart-content .chart-vertical-zero-line{
+    -fx-stroke:#00e5ff;
+    -fx-stroke-width:10;
+    
+    
+}
+
+#gPane {
+    -fx-border-color:#00e5ff;
+    
+}
+
+.chart .chart-content .chart-horizontal-zero-line{
+    -fx-stroke:#00e5ff;
+    -fx-stroke-width:10;
+    
+    
+}
+
+.default-color0.chart-series-line { -fx-stroke: #0d47a1;}
+.default-color1.chart-series-line { -fx-stroke: #880e4f; }
+.default-color2.chart-series-line { -fx-stroke: #ff6d00; }
+.default-color0.chart-line-symbol { -fx-background-color: #0d47a1, white; }
+.default-color1.chart-line-symbol { -fx-background-color: #880e4f, white; }
+.default-color2.chart-line-symbol { -fx-background-color: #ff6d00, white; }
